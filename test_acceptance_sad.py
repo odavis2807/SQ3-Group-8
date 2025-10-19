@@ -1,4 +1,15 @@
-# test_acceptance_sad.py
+"""
+test_acceptance_sad.py
+
+This module contains acceptance tests for sad path scenarios of the
+Flask image prediction application. The tests cover:
+
+1. Uploading requests with missing files
+2. Handling invalid or incorrect input data
+
+Each test ensures the application gracefully handles errors and returns
+appropriate responses.
+"""
 
 import pytest
 from app import app
@@ -24,11 +35,11 @@ def test_acceptance_missing_file(client):
     """
     # Simulate a POST request with no file data
     response = client.post("/prediction", data={}, content_type="multipart/form-data")
-    
+
     # Assertions:
     # 1. Ensure the response status code is 200, indicating the request was processed.
     assert response.status_code == 200
-    
+
     # 2. Check for a meaningful error message in the response data.
     #    Modify the message check if your application uses a different error response text.
-    assert b"File cannot be processed" in response.data  # Expected error message
+    assert b"File cannot be processed" in response.data

@@ -1,7 +1,19 @@
-# test_acceptance_happy.py
+"""
+test_acceptance_happy.py
+
+This module contains acceptance tests for the happy path scenarios of the
+Flask image prediction application. The tests cover:
+
+1. Uploading a valid image file
+2. Uploading large but valid image files
+3. Uploading images with a specific large size or resolution
+
+Each test ensures the application handles these scenarios correctly and
+returns valid prediction responses.
+"""
 
 from io import BytesIO
-import pytest
+# import pytest
 
 def test_acceptance_successful_upload(client):
     """
