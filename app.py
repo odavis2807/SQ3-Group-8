@@ -55,6 +55,7 @@ def predict_image_file():
 
 
 # Driver code
+
 if __name__ == "__main__":
     # Run the Flask application on port 9000 with debug mode enabled.
     app.run(port=9000, debug=True)
